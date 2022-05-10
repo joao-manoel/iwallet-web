@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body{
-  @apply bg-black font-roboto text-zinc-400
+  @apply bg-white dark:bg-black font-roboto text-zinc-400
 }
 
 a{

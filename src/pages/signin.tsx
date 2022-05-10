@@ -71,7 +71,7 @@ const SignIn: NextPage = () => {
               </Link>
             </div>
 
-            <button className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:bg-indigo-900" disabled={false}>Entrar</button>
+            <button className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-4 focus:ring-indigo-500 disabled:bg-indigo-900" disabled={false}>Entrar</button>
 
             <p className="text-sm text-center my-4">
               Não tem uma conta? <Link href="#"><a>Registre-se</a></Link>

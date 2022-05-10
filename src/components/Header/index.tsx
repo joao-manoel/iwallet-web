@@ -1,7 +1,10 @@
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
+
+import {DotsVerticalIcon} from "@heroicons/react/solid"
 import { NavItem } from "./navItem"
+
 
 export const Header = () => {
   const [asMobileNavOpen, setAsMobileNavOpen] = useState(false)

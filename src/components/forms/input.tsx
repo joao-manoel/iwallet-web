@@ -22,7 +22,7 @@ const InputComponent: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
             
             <div>
                 <input
-                  className="appearance-none h-full py-2 px-2 text-white bg-black border-[2px] border-zinc-800 w-full rounded-md"
+                  className="appearance-none h-full py-3 px-3 md:px-2 md:py-2 text-white bg-black border-[2px] border-zinc-800 w-full rounded-md focus:ring-indigo-600 focus:border-indigo-600 focus:outline-none focus:ring-1"
                   id={name} 
                   {...inputRest} 
                   {...rest} 
