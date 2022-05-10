@@ -7,8 +7,8 @@ import { Page } from '../components/page'
 const Home: NextPage = () => {
   return (
     <Page title='IWallet' path='/' description='seu controle financeiro'>
-      <div className="container m-auto h-screen">
-        <Header />     
+      <div className="container m-auto">
+        <Header /> 
       </div>
     </Page>
   )

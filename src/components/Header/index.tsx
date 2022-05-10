@@ -1,8 +1,11 @@
+import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { NavItem } from "./navItem"
 
 export const Header = () => {
+  const [asMobileNavOpen, setAsMobileNavOpen] = useState(false)
+
   return(
     <header className="py-4 px-4 flex justify-between items-center text-white gap-8">
         <div className="">
@@ -19,29 +22,23 @@ export const Header = () => {
           
         </div>
 
-        <div className="cursor-pointer md:hidden">
+        <div className="cursor-pointer md:hidden" onClick={() => setAsMobileNavOpen(!asMobileNavOpen)}>
           <span className="w-9 h-[2px] bg-white block "></span>
           <span className="w-9 h-[2px] bg-white block my-2"></span>
         </div>
 
-        <div className="absolute top-14 left-0 min-w-full bg-black min-h-full md:block md:relative md:top-0 md:min-h-0 md:min-w-fit md:bg-transparent">
+        <div className={(asMobileNavOpen ? 'statics' : 'hidden') + ' absolute top-14 left-0 min-w-full bg-black min-h-[94%] z-50 md:block md:relative md:top-0 md:min-h-0 md:min-w-fit md:bg-transparent'}>
           <ul className="flex gap-2 items-center md:gap-8 flex-col md:flex-row  p-8 md:p-0 text-md">
-            <NavItem>
-              <Link href="/">
-                <a>Sobre</a>
-              </Link>
+            <NavItem path="/">
+              Sobre
             </NavItem>
 
-            <NavItem>
-              <Link href="/">
-                <a>Blog</a>
-              </Link>
+            <NavItem path="#">
+              Blog
             </NavItem>
 
-            <NavItem>
-              <Link href="/signin">
-                <a>Entrar</a>
-              </Link>
+            <NavItem path="/signin">
+              Entrar
             </NavItem>
             
             <li className="min-w-full md:min-w-fit text-center m-1">

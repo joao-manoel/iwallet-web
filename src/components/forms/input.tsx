@@ -1,7 +1,7 @@
 import React, { ForwardRefRenderFunction, InputHTMLAttributes } from 'react'
 import { forwardRef } from 'react';
 import { Control, Controller, FieldError } from 'react-hook-form';
-import {AtSymbolIcon} from '@heroicons/react/solid'
+
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
   label?: string;
@@ -20,15 +20,15 @@ const InputComponent: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
           defaultValue= {''}
           render={({ field: { ref, ...rest}}) => (
             
-            <div className="bg-black border-[2px] border-zinc-800 w-full rounded-md">
+            <div>
                 <input
-                  className="appearance-none w-full h-full py-2 px-2 text-white bg-black"
+                  className="appearance-none h-full py-2 px-2 text-white bg-black border-[2px] border-zinc-800 w-full rounded-md"
                   id={name} 
                   {...inputRest} 
                   {...rest} 
                   ref={ref}                  
                 />
-                {!!error && <span>{error.message}</span>}
+                {!!error && <span className='text-red-500 text-sm'>{error.message}</span>}
             </div>
           )}  
         />

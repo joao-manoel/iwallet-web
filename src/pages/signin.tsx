@@ -1,14 +1,12 @@
 import { NextPage } from "next"
-
 import { SubmitHandler, useForm } from "react-hook-form"
 import {yupResolver} from '@hookform/resolvers/yup'
 import * as yup from "yup"
+import Link from "next/link"
+import Image from "next/image"
+
 import { Page } from "../components/page"
 import { Input } from "../components/forms"
-import Image from "next/image"
-import Link from "next/link"
-
-
 
 type LoginData = {
   email: string
@@ -16,8 +14,8 @@ type LoginData = {
 }
 
 const LoginFormSchema = yup.object().shape({
-  email: yup.string().required('E-mail é obrigatorio.').email('Digite um e-mail valido.'),
-  password: yup.string().required('Senha é obritatoria.')
+  email: yup.string().required('E-mail é obrigatório.').email('Digite um e-mail valido.'),
+  password: yup.string().required('Senha é obrigatório.')
 })
 
 const SignIn: NextPage = () => {
@@ -41,22 +39,29 @@ const SignIn: NextPage = () => {
                 alt="logo do iwallet" 
                 width={90} 
                 height={36} 
+                priority={true}
               />
             </a>
           </Link>
           
-          <form className="flex flex-col gap-4">
+          <form className="flex flex-col gap-4" onSubmit={handleSubmit(handleLoginRequest)}>
             <Input
               control={control} 
+              type="text"
               name="email"
-              placeholder="E-mail" 
+              placeholder="E-mail"
+              error={errors.email}
+              {...register('email')}
             />
 
             <div>
               <Input 
-                control={control} 
+                control={control}
+                type="password" 
                 name="password" 
                 placeholder="Senha"
+                error={errors.password}
+                {...register('password')}
               />
 
               <Link href="/forgot">
@@ -66,10 +71,10 @@ const SignIn: NextPage = () => {
               </Link>
             </div>
 
-            <button className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:bg-indigo-900" disabled>Entrar</button>
+            <button className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:bg-indigo-900" disabled={false}>Entrar</button>
 
             <p className="text-sm text-center my-4">
-              Não tem uma conta? <Link href="signup"><a>Registre-se</a></Link>
+              Não tem uma conta? <Link href="#"><a>Registre-se</a></Link>
             </p>
           </form>          
         </div>
