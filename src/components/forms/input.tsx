@@ -20,12 +20,9 @@ const InputComponent: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
           defaultValue= {''}
           render={({ field: { ref, ...rest}}) => (
             
-            <div className="bg-bg-500 flex items-center rounded-lg overflow-hidden text-[#333]">
-                <label htmlFor={name} className="text-sm px-2 w-max">
-                  {label}
-                </label>
+            <div className="bg-black border-[2px] border-zinc-800 w-full rounded-md">
                 <input
-                  className="appearance-none bg-bg-500 border-0 w-full h-full"
+                  className="appearance-none w-full h-full py-2 px-2 text-white bg-black"
                   id={name} 
                   {...inputRest} 
                   {...rest} 
