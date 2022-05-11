@@ -31,7 +31,7 @@ const SignIn: NextPage = () => {
   return(
     <Page title="Entrar - IWallet" description="faça login na iwallet" path="/signin">
       <div className="container m-auto h-screen flex items-center justify-center">
-        <div className="container w-3/4 md:w-96 flex flex-col gap-8 text-white py-8 px-4">
+        <div className="container w-3/4 md:w-96 flex flex-col gap-8 text-white py-8 px-4 shadow-2xl">
           <Link href="/">
             <a className="flex flex-col">
               <Logo />
@@ -67,7 +67,7 @@ const SignIn: NextPage = () => {
 
             <button className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-4 focus:ring-indigo-500 disabled:bg-indigo-900" disabled={false}>Entrar</button>
 
-            <p className="text-sm text-center my-4">
+            <p className="text-sm text-center my-4 text-gray-600">
               Não tem uma conta? <Link href="#"><a>Registre-se</a></Link>
             </p>
           </form>          

@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 body{
-  @apply bg-white dark:bg-black font-roboto text-zinc-400
+  @apply bg-white dark:bg-black font-roboto text-gray-600 dark:text-zinc-400
 }
 
 a{
-  @apply text-indigo-900
+  @apply text-indigo-900 hover:text-indigo-700
 }

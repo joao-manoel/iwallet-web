@@ -10,7 +10,7 @@ export const NavItem = ({children, path}: itemProps) => {
   return(
     <li className="border-b-[1px] md:border-b-0 border-gray-800 min-w-full md:min-w-fit text-center cursor-pointer">
       <Link href={path}>
-        <a className="text-zinc-400 hover:text-zinc-50">
+        <a className="text-black hover:text-indigo-600 dark:text-zinc-400 dark:hover:text-zinc-50 transition-colors">
           {children}
         </a>
       </Link>
