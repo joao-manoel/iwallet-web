@@ -3,10 +3,10 @@ import { SubmitHandler, useForm } from "react-hook-form"
 import {yupResolver} from '@hookform/resolvers/yup'
 import * as yup from "yup"
 import Link from "next/link"
-import Image from "next/image"
 
 import { Page } from "../components/page"
 import { Input } from "../components/forms"
+import { Logo } from "../components/logo"
 
 type LoginData = {
   email: string
@@ -34,13 +34,7 @@ const SignIn: NextPage = () => {
         <div className="container w-3/4 md:w-96 flex flex-col gap-8 text-white py-8 px-4">
           <Link href="/">
             <a className="flex flex-col">
-              <Image 
-                src="/images/logo-full.svg" 
-                alt="logo do iwallet" 
-                width={90} 
-                height={36} 
-                priority={true}
-              />
+              <Logo />
             </a>
           </Link>
           

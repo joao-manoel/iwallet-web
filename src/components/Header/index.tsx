@@ -1,9 +1,8 @@
 import { useState } from "react"
-import Image from "next/image"
 import Link from "next/link"
 
-import {DotsVerticalIcon} from "@heroicons/react/solid"
 import { NavItem } from "./navItem"
+import { Logo } from "../logo"
 
 
 export const Header = () => {
@@ -11,15 +10,10 @@ export const Header = () => {
 
   return(
     <header className="py-4 px-4 flex justify-between items-center text-white gap-8">
-        <div className="">
+        <div>
           <Link href="/">
             <a>
-              <Image 
-                src="/images/logo-full.svg"
-                alt='iwallet logo'
-                width={124}
-                height={46}
-              />
+              <Logo />              
             </a>
           </Link>
           
