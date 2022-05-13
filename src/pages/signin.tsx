@@ -33,7 +33,7 @@ const SignIn: NextPage = () => {
       <div className="container m-auto h-screen flex items-center justify-center">
         <div className="container w-3/4 md:w-96 flex flex-col gap-8 text-white py-8 px-4 shadow-2xl">
           <Link href="/">
-            <a className="flex flex-col">
+            <a className="flex flex-col items-center">
               <Logo />
             </a>
           </Link>

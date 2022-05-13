@@ -1,4 +1,5 @@
 module.exports = {
+  mode: 'jit',
   darkMode: 'class',
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx}",
@@ -6,7 +7,8 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      'roboto': ['roboto', 'sans-serif']
+      'roboto': ['roboto', 'sans-serif'],
+      'inter': ['inter', 'sans-serif'],
     },
     extend: {
       

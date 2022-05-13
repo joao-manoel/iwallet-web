@@ -1,23 +1,51 @@
+import { useEffect, useState } from 'react'
 import type { NextPage } from 'next'
+import { MoonIcon, SunIcon } from '@heroicons/react/solid'
 import { useTheme } from 'next-themes'
 
 import { Header } from '../components/Header'
 import { Page } from '../components/page'
 
 
+
 const Home: NextPage = () => {
-  const {theme, setTheme} = useTheme()
+  const {systemTheme, theme, setTheme} = useTheme()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() =>{
+    setMounted(true)
+  }, [])
+  const renderThemeChanger = () => {
+    if(!mounted) return null
+
+    const currentTheme = theme === 'system' ? systemTheme : theme
+
+    if(currentTheme === 'dark'){
+      return(
+        <SunIcon 
+          className='w-7 h-7' 
+          role='button' 
+          onClick={() => setTheme('light')} 
+        />
+      )
+    }
+    else {
+      return (
+        <MoonIcon 
+          className='w-7 h-7' 
+          role='button' 
+          onClick={() => setTheme('dark')} 
+        />
+      )
+    }
+  }
 
   return (
     <Page title='IWallet' path='/' description='seu controle financeiro'>
       <div className="container m-auto">
         <Header />
-        <button
-          className='px-6 py-2 bg-black dark:bg-white text-white dark:text-black'
-          onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-        >
-          Toggle to {theme === 'light' ? 'Dark' : 'Light'}
-        </button> 
+
+        {renderThemeChanger()}
       </div>
     </Page>
   )
