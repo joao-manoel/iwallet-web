@@ -23,7 +23,7 @@ const Home: NextPage = () => {
     if(currentTheme === 'dark'){
       return(
         <SunIcon 
-          className='w-7 h-7' 
+          className='w-4' 
           role='button' 
           onClick={() => setTheme('light')} 
         />
@@ -32,7 +32,7 @@ const Home: NextPage = () => {
     else {
       return (
         <MoonIcon 
-          className='w-7 h-7' 
+          className='w-4 ' 
           role='button' 
           onClick={() => setTheme('dark')} 
         />
